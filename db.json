@@ -1,0 +1,11 @@
+{
+  "employee": [
+    {
+      "name": "Oluwatobi Daniel",
+      "email": "dannyobito05@gmail.com",
+      "phone": "1233466551",
+      "active": true,
+      "id": 1
+    }
+  ]
+}
