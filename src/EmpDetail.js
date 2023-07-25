@@ -13,7 +13,7 @@ const EmpDetail = () => {
         }).catch((error)=>{
             console.log(error);
         })
-    },[]);
+    },[employeeid]);
     return(
         <div>
             { employeedata &&

@@ -17,6 +17,7 @@ const App = () => {
           <Route path='/employee/edit/:employeeid' element={<EmpEdit/>}></Route>
         </Routes>
       </BrowserRouter>
+    
     </div>
     
   );

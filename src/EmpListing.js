@@ -1,4 +1,4 @@
-//json-server --watch db.json --por
+//json-server --watch db.json --port 8000
 
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";

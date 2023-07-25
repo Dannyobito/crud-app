@@ -5,12 +5,11 @@ const EmpEdit = () => {
 
 
     const{ employeeid }=useParams();
-    //const[employeedata,employeedatachange]=useState({})
     const[id,idchange]=useState("");
     const[name,namechange]=useState("");
     const[email,emailchange]=useState("");
     const[phone,phonechange]=useState("");
-    const[active,activechange]=useState(true);
+    let[active,activechange]=useState(false);
     const[validation,validationchange]=useState(false);
     const navigate=useNavigate();
 
@@ -26,7 +25,7 @@ const EmpEdit = () => {
         }).catch((error)=>{
             console.log(error);
         })
-    },[]);
+    },[employeeid]);
 
     const handleSubmit = (e)=>{
         e.preventDefault();
@@ -71,18 +70,18 @@ const EmpEdit = () => {
                                 <div className="col-lg-12">
                                     <div className="form-group">
                                         <label>Email</label>
-                                        <input value={email} onChange={e=>emailchange(e.target.value)} className="form-control"></input>
+                                        <input type="email" value={email} onChange={e=>emailchange(e.target.value)} className="form-control"></input>
                                     </div>                                        
                                 </div>
                                 <div className="col-lg-12">
                                     <div className="form-group">
                                         <label>Phone</label>
-                                        <input value={phone} onChange={e=>phonechange(e.target.value)} className="form-control"></input>
+                                        <input type="number" value={phone} onChange={e=>phonechange(e.target.value)} className="form-control"></input>
                                     </div>                                        
                                 </div>
                                 <div className="col-lg-12">
                                     <div className="form-check">
-                                        <input checked={active} onChange={e=>activechange(e.target.value)} type="checkbox" className="form-check-input"></input>
+                                        <input onChange={e=>activechange(e.target.checked)} type="checkbox" className="form-check-input"></input>
                                         <label className="form-check-label">Is Active</label>
                                     </div>                                        
                                 </div>
