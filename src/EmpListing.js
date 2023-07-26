@@ -80,9 +80,9 @@ const EmpListing = () => {
                                         {user.phone}
                                         </td>
                                         <td>
-                                            <a onClick={(()=>{loadEdit(user.id)})} className="btn btn-success">Edit</a>
-                                            <a onClick={(()=>{loadDetails(user.id)})} className="btn btn-primary">Details</a>
-                                            <a onClick={(()=>{remove(user.id)})} className="btn btn-danger">Remove</a>
+                                            <button onClick={(()=>{loadEdit(user.id)})} className="btn btn-success">Edit</button>
+                                            <button onClick={(()=>{loadDetails(user.id)})} className="btn btn-primary">Details</button>
+                                            <button onClick={(()=>{remove(user.id)})} className="btn btn-danger">Remove</button>
                                         </td>
                                     </tr>
                                 ))

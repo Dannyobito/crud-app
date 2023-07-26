@@ -8,12 +8,19 @@ const EmpCreate = () => {
     const[phone,phonechange]=useState("");
     let[active,activechange]=useState(false);
     const[validation,validationchange]=useState(false);
+    const[password,passwordchange]=useState("");
+    const[confirmpassword,confirmpasswordchange]=useState("");
+    const[passworderror,setpassworderror] = useState("")
     const navigate=useNavigate();
 
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        const employeedata={name,email,phone,active};; 
+        if (password !== confirmpassword) {
+            setpassworderror('Passwords do not match');
+            return;
+          }
+        const employeedata={name,email,phone,active,password};; 
         fetch("http://localhost:8000/employee",{
             method:"POST",
             headers:{"content-type":"application/json"},
@@ -56,13 +63,26 @@ const EmpCreate = () => {
                                     <div className="col-lg-12">
                                         <div className="form-group">
                                             <label>Email</label>
-                                            <input type="email" value={email} onChange={e=>emailchange(e.target.value)} className="form-control"></input>
+                                            <input type="email" required value={email} onChange={e=>emailchange(e.target.value)} className="form-control"></input>
                                         </div>                                        
                                     </div>
                                     <div className="col-lg-12">
                                         <div className="form-group">
                                             <label>Phone</label>
                                             <input type="number" value={phone} onChange={e=>phonechange(e.target.value)} className="form-control"></input>
+                                        </div>                                        
+                                    </div>
+                                    <div className="col-lg-12">
+                                        <div className="form-group">
+                                            <label>Password</label>
+                                            <input type="password" value={password} onChange={e=>passwordchange(e.target.value)} className="form-control"></input>
+                                        </div>                                        
+                                    </div>
+                                    <div className="col-lg-12">
+                                        <div className="form-group">
+                                            <label>Confirm password</label>
+                                            <input type="password" value={confirmpassword} onChange={e=>confirmpasswordchange(e.target.value)} className="form-control"></input>
+                                            {{passworderror} && <span className="text-danger">{passworderror}</span>}
                                         </div>                                        
                                     </div>
                                     <div className="col-lg-12">

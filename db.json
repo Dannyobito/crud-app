@@ -6,6 +6,22 @@
       "phone": "123454343",
       "active": true,
       "id": 1
+    },
+    {
+      "name": "Abayomi Oluwatobi",
+      "email": "oluwatobi@mail.com",
+      "phone": "09012345678",
+      "active": true,
+      "password": "qwerty",
+      "id": 2
+    },
+    {
+      "name": "Abayomi Oluwatobi",
+      "email": "oluwatobi@mail.com",
+      "phone": "09012345678",
+      "active": true,
+      "password": "qwerty",
+      "id": 3
     }
   ]
 }

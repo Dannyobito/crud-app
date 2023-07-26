@@ -4,6 +4,7 @@ import EmpListing from './EmpListing';
 import EmpCreate from './EmpCreate';
 import EmpEdit from './EmpEdit';
 import EmpDetail from './EmpDetail'
+import EmpLogin from './EmpLogin';
 
 const App = () => {
   return (
@@ -11,7 +12,8 @@ const App = () => {
       <h1>React CRUD Operations</h1>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<EmpListing/>}></Route>
+        <Route path='/' element={<EmpLogin/>}></Route>
+          <Route path='/employee/listing' element={<EmpListing/>}></Route>
           <Route path='/employee/create' element={<EmpCreate/>}></Route>
           <Route path='/employee/detail/:employeeid' element={<EmpDetail/>}></Route>
           <Route path='/employee/edit/:employeeid' element={<EmpEdit/>}></Route>

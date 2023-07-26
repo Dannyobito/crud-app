@@ -70,7 +70,7 @@ const EmpEdit = () => {
                                 <div className="col-lg-12">
                                     <div className="form-group">
                                         <label>Email</label>
-                                        <input type="email" value={email} onChange={e=>emailchange(e.target.value)} className="form-control"></input>
+                                        <input required type="email" value={email} onChange={e=>emailchange(e.target.value)} className="form-control"></input>
                                     </div>                                        
                                 </div>
                                 <div className="col-lg-12">
